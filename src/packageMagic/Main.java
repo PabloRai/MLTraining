@@ -7,9 +7,11 @@ public class Main {
 	public static void main(String[] args) {
 //		Primos pr;
 		Scanner sc = new Scanner(System.in);
-		Letra l = new Letra(sc.nextLine());
-		l.solve();
+//		Letra l = new Letra(sc.nextLine());
+//		l.solve();
 //		pr = new Primos(sc.nextInt(),sc.nextInt());
+		Palindromo p = new Palindromo(sc.nextLine());
+		p.solve();
 		sc.close();
 //		LinkedList<Integer> l = pr.solve();
 //		for (int i = 0; i < l.size(); i++) {

@@ -6,7 +6,7 @@ import java.util.Map;
 
 public class Letra {
 	private String str;
-	private HashMap<Character, MutableInt> map = new HashMap<Character, MutableInt>();
+	private HashMap<Character, MutableInt> letras = new HashMap<Character, MutableInt>();
 	
 	public Letra(final String str) {
 		this.str = str;
@@ -19,13 +19,13 @@ public class Letra {
 		Iterator<Map.Entry<Character, MutableInt>> it;
 		for (int i = 0; i < str.length(); i++) {
 			letra = str.charAt(i);
-			if(map.get(letra) == null) {
-				map.put(letra, new MutableInt());
+			if(letras.get(letra) == null) {
+				letras.put(letra, new MutableInt());
 			} else {
-				map.get(letra).incrementValue();
+				letras.get(letra).incrementValue();
 			}
 		}
-		it = map.entrySet().iterator();
+		it = letras.entrySet().iterator();
 		
 		while(it.hasNext()) {
 			Map.Entry<Character, MutableInt> entry = it.next();
@@ -36,5 +36,12 @@ public class Letra {
 		}
 		
 		System.out.println("Letra: " + letra + " Cantidad: "+ maxValue);
-	} 
+	}
+	/*
+	 * La complejidad computacional del algoritmos es O(n) ya que se recorre toda la oracion en
+	 * búsqueda de las letras, se utiliza una clase MutableInt con el fin de optimizar el incremento
+	 * dentro del hashMap
+	 * 
+	 * La complejidad espacial es también O(N) que es la complejidad espacial del hashmap.
+	 */
 }
